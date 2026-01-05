@@ -6,6 +6,16 @@ Ever found yourself at the end of the month thinking "Wait, where did all my mon
 
 No more spreadsheet headaches. No more "I think I spent around..." guesses. Just real data, real insights, and real control over your finances. Let's get your money game strong! 💪
 
+## 🚀 Live Demo
+
+**Want to see it in action?** Check out the live demo and play around with it!
+
+👉 **[Try it now!](https://your-demo-link.com)** 👈
+
+*Note: Replace the link above with your actual deployment URL once you deploy the app*
+
+---
+
 ## What Can You Do? (Pretty Much Everything!)
 
 ✨ **Sign up in seconds** – Your financial journey starts here
