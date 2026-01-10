@@ -23,6 +23,15 @@ app.use(express.json());
 
 connectDB();
 
+// Health check route
+app.get("/", (req, res) => {
+  res.json({ 
+    status: "OK", 
+    message: "Expense Tracker API is running",
+    version: "1.0.0"
+  });
+});
+
 app.use("/api/v1/auth", authRoutes);
 app.use("/api/v1/income", incomeRoutes);
 app.use("/api/v1/expense", expenseRoutes);
