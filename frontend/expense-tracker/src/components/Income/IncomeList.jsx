@@ -1,4 +1,4 @@
-import React from "react";
+import PropTypes from 'prop-types';
 import TransactionInfoCard from "../Cards/TransactionInfoCard";
 import moment from "moment";
 import { LuDownload } from "react-icons/lu";
@@ -29,6 +29,12 @@ const IncomeList = ({ transactions, onDelete, onDownload }) => {
       </div>
     </div>
   );
+};
+
+IncomeList.propTypes = {
+  transactions: PropTypes.array,
+  onDelete: PropTypes.func.isRequired,
+  onDownload: PropTypes.func.isRequired,
 };
 
 export default IncomeList;
