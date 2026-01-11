@@ -10,7 +10,6 @@ const dashboardRoutes = require("./routes/dashboardRoutes");
 
 const app = express();
 
-// Middleware to handle CORS
 app.use(
   cors({
     origin: process.env.CLIENT_URL || "*", 
@@ -23,7 +22,6 @@ app.use(express.json());
 
 connectDB();
 
-// Health check route
 app.get("/", (req, res) => {
   res.json({ 
     status: "OK", 
@@ -37,12 +35,10 @@ app.use("/api/v1/income", incomeRoutes);
 app.use("/api/v1/expense", expenseRoutes);
 app.use("/api/v1/dashboard", dashboardRoutes);
 
-// Serve uploads folder
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
 const PORT = process.env.PORT || 5000;
 
-// Only listen if not in serverless environment
 if (process.env.NODE_ENV !== 'production') {
   app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 }

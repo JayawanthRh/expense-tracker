@@ -23,7 +23,6 @@ const Income = () => {
     data: null,
   });
 
-  // Get All Income Details
   const fetchIncomeDetails = async () => {
     if (loading) return;
 
@@ -44,7 +43,6 @@ const Income = () => {
     }
   };
 
-  // Handle Add Income
   const handleAddIncome = async (income) => {
     const { source, amount, date, icon } = income;
 
@@ -83,7 +81,6 @@ const Income = () => {
     }
   };
 
-  // Delete Income
   const deleteIncome = async (id) => {
     try {
       await axiosInstance.delete(API_PATHS.INCOME.DELETE_INCOME(id));
@@ -99,7 +96,6 @@ const Income = () => {
     }
   };
 
-  // handle download income details
   const handleDownloadIncomeDetails = async () => {
     try {
       const response = await axiosInstance.get(

@@ -1,14 +1,12 @@
 const xlsx = require('xlsx');
 const Income = require("../models/Income");
 
-// Add Income
 exports.addIncome = async (req, res) => {
   const userId = req.user.id;
 
   try {
     const { icon, source, amount, date } = req.body;
 
-    // Validation: Check for missing fields
     if (!source || !amount || !date) {
       return res.status(400).json({ message: "All fields are required" });
     }
@@ -28,7 +26,6 @@ exports.addIncome = async (req, res) => {
   }
 };
 
-// Get All Income (For Logged-in User)
 exports.getAllIncome = async (req, res) => {
   const userId = req.user.id;
 
@@ -40,7 +37,6 @@ exports.getAllIncome = async (req, res) => {
   }
 };
 
-// Delete Income
 exports.deleteIncome = async (req, res) => {
   const userId = req.user.id;
 
@@ -52,13 +48,11 @@ exports.deleteIncome = async (req, res) => {
   }
 };
 
-// Download Income Details in Excel
 exports.downloadIncomeExcel = async (req, res) => {
   const userId = req.user.id;
   try {
     const income = await Income.find({ userId }).sort({ date: -1 });
 
-    // Prepare data for Excel
     const data = income.map((item) => ({
       Source: item.source,
       Amount: item.amount,
