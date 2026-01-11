@@ -5,14 +5,13 @@ import {
   YAxis,
   CartesianGrid,
   Tooltip,
-  Legend,
   ResponsiveContainer,
   Cell,
 } from "recharts";
+import PropTypes from 'prop-types';
 
 const CustomBarChart = ({ data }) => {
 
-  // Function to alternate colors
   const getBarColor = (index) => {
     return index % 2 === 0 ? "#875cf5" : "#cfbefb"; 
   };
@@ -29,6 +28,11 @@ const CustomBarChart = ({ data }) => {
       );
     }
     return null;
+  };
+
+  CustomTooltip.propTypes = {
+    active: PropTypes.bool,
+    payload: PropTypes.array,
   };
 
   return (
@@ -58,6 +62,10 @@ const CustomBarChart = ({ data }) => {
       </ResponsiveContainer>
     </div>
   );
+};
+
+CustomBarChart.propTypes = {
+  data: PropTypes.array.isRequired,
 };
 
 export default CustomBarChart;

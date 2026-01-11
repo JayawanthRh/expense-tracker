@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import { useContext, useState } from "react";
 import AuthLayout from "../../components/Layouts/AuthLayout";
 import { Link, useNavigate } from "react-router-dom";
 import Input from "../../components/Inputs/Input";
@@ -20,7 +20,6 @@ const SignUpForm = () => {
   const { updateUser } = useContext(UserContext);
   const navigate = useNavigate();
 
-  // Handle Sign Up Form Submit
   const handleSignUp = async (e) => {
     e.preventDefault();
 
@@ -43,9 +42,7 @@ const SignUpForm = () => {
 
     setError("");
 
-    // SignUp API Call
     try {
-      // Upload image if present
       if (profilePic) {
         const imgUploadRes = await uploadImage(profilePic);
         profileImageUrl = imgUploadRes.imageUrl || "";

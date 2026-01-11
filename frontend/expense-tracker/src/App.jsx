@@ -4,7 +4,6 @@ import {
   Route,
   Navigate,
 } from "react-router-dom";
-import React from "react";
 import LoginForm from "./pages/Auth/LoginForm";
 import SignUpForm from "./pages/Auth/SignUpForm";
 import UserProvider from "./context/UserContext";
@@ -41,14 +40,11 @@ const App = () => {
       </UserProvider>
     </div>
   );
-};
+}
 
-// Define the Root component to handle the initial redirect
 const Root = () => {
-  // Check if token exists in localStorage
   const isAuthenticated = !!localStorage.getItem("token");
 
-  // Redirect to dashboard if authenticated, otherwise to login
   return isAuthenticated ? (
     <Navigate to="/dashboard" />
   ) : (

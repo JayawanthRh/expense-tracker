@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import AuthLayout from "../../components/Layouts/AuthLayout";
 import { Link, useNavigate } from "react-router-dom";
 import Input from "../../components/Inputs/Input";
@@ -15,7 +15,6 @@ const LoginForm = () => {
   const { updateUser } = useContext(UserContext);
   const navigate = useNavigate();
 
-  // Handle Login Form Submit
   const handleLogin = async (e) => {
     e.preventDefault();
 
@@ -31,7 +30,6 @@ const LoginForm = () => {
 
     setError("");
 
-    //Login API Call
     try {
       const response = await axiosInstance.post(API_PATHS.AUTH.LOGIN, {
         email,

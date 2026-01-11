@@ -46,7 +46,6 @@ const Expense = () => {
   const handleAddExpense = async (expense) => {
     const { category, amount, date, icon } = expense;
 
-    // Validation Checks
     if (!category.trim()) {
       toast.error("Category is required.");
       return;
@@ -105,7 +104,6 @@ const Expense = () => {
         }
       );
 
-      // Create a URL for the blob
       const url = window.URL.createObjectURL(new Blob([response.data]));
       const link = document.createElement("a");
       link.href = url;

@@ -46,7 +46,6 @@ const Income = () => {
   const handleAddIncome = async (income) => {
     const { source, amount, date, icon } = income;
 
-    // Validation Checks
     if (!source.trim()) {
       toast.error("Source is required.");
       return;
@@ -105,7 +104,6 @@ const Income = () => {
         }
       );
 
-      // Create a URL for the blob
       const url = window.URL.createObjectURL(new Blob([response.data]));
       const link = document.createElement("a");
       link.href = url;

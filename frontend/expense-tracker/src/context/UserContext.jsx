@@ -1,16 +1,15 @@
-import React, { createContext, useState } from "react";
+import { createContext, useState } from "react";
+import PropTypes from 'prop-types';
 
 export const UserContext = createContext();
 
 const UserProvider = ({ children }) => {
   const [user, setUser] = useState(null);
 
-  // Function to update user data
   const updateUser = (userData) => {
     setUser(userData);
   };
 
-  // Function to clear user data (e.g., on logout)
   const clearUser = () => {
     setUser(null);
   };
@@ -26,6 +25,10 @@ const UserProvider = ({ children }) => {
       {children}
     </UserContext.Provider>
   );
+};
+
+UserProvider.propTypes = {
+  children: PropTypes.node.isRequired,
 };
 
 export default UserProvider;
