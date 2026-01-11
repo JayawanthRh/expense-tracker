@@ -1,5 +1,7 @@
 # Expense Tracker 💸
 
+🚀 **[View Live Demo](https://expense-tracker-frontend-git-master-jayawanth-rayaks-projects.vercel.app)** 🚀
+
 **Stop wondering where your money went!** 
 
 Ever found yourself at the end of the month thinking "Wait, where did all my money go?" Yeah, we've all been there. This app is your financial detective – it tracks every penny, shows you exactly where you're spending, and helps you make smarter money decisions. Built with the MERN stack and packed with gorgeous charts that actually make sense of your spending chaos.
