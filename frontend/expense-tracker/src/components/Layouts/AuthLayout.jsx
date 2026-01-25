@@ -1,13 +1,12 @@
-import React from "react";
-
 import CARD_2 from "../../assets/images/card2.png";
 import { LuTrendingUpDown } from "react-icons/lu";
+import PropTypes from "prop-types";
 
 const AuthLayout = ({ children }) => {
   return (
     <div className="flex">
       <div className="w-screen h-screen md:w-[60vw] px-12 pt-8 pb-12">
-        <h2 className="text-lg font-medium text-black">Expense Tracker</h2>
+        <h2 className="text-2xl font-bold text-black tracking-tight">Expense Tracker</h2>
         {children}
       </div>
 
@@ -43,11 +42,22 @@ const StatsInfoCard = ({ icon, label, value, color }) => {
         {icon}
       </div>
       <div>
-        <h6 className="text-xs text-gray-500 mb-1">{label}</h6>
-        <span className="text-[20px]">${value}</span>
+        <h6 className="text-xs text-gray-900 font-bold mb-1">{label}</h6>
+        <span className="text-[20px] font-extrabold text-black">${value}</span>
       </div>
     </div>
   );
+};
+
+AuthLayout.propTypes = {
+  children: PropTypes.node.isRequired,
+};
+
+StatsInfoCard.propTypes = {
+  icon: PropTypes.node.isRequired,
+  label: PropTypes.string.isRequired,
+  value: PropTypes.string.isRequired,
+  color: PropTypes.string.isRequired,
 };
 
 export default AuthLayout;

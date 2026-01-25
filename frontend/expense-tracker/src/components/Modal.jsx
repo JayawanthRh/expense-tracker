@@ -1,4 +1,4 @@
-import React from "react";
+import PropTypes from "prop-types";
 
 const Modal = ({ isOpen, onClose, children, title }) => {
   if (!isOpen) return null;
@@ -11,13 +11,13 @@ const Modal = ({ isOpen, onClose, children, title }) => {
           {/* Modal header */}
 
           <div className="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600 border-gray-200">
-            <h3 className="text-lg font-medium text-gray-900 dark:text-white">
+            <h3 className="text-xl font-bold text-gray-900 dark:text-white">
               {title}
             </h3>
 
             <button
               type="button"
-              className="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white cursor-pointer"
+              className="text-gray-900 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white cursor-pointer font-bold"
               onClick={onClose}
             >
               <svg
@@ -46,6 +46,13 @@ const Modal = ({ isOpen, onClose, children, title }) => {
       </div>
     </div>
   );
+};
+
+Modal.propTypes = {
+  isOpen: PropTypes.bool.isRequired,
+  onClose: PropTypes.func.isRequired,
+  children: PropTypes.node,
+  title: PropTypes.string,
 };
 
 export default Modal;

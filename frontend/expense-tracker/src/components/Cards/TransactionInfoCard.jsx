@@ -1,10 +1,10 @@
-import React from "react";
 import {
   LuUtensils,
   LuTrendingUp,
   LuTrendingDown,
   LuTrash2,
 } from "react-icons/lu";
+import PropTypes from "prop-types";
 
 const TransactionInfoCard = ({
   icon,
@@ -31,7 +31,7 @@ const TransactionInfoCard = ({
       <div className="flex-1 flex items-center justify-between">
         <div>
           <p className="text-sm text-gray-700 font-medium">{title}</p>
-          <p className="text-xs text-gray-400 mt-1">{date}</p>
+          <p className="text-xs text-gray-800 font-bold mt-1">{date}</p>
         </div>
 
         <div className="flex items-center gap-2">
@@ -54,6 +54,16 @@ const TransactionInfoCard = ({
       </div>
     </div>
   );
+};
+
+TransactionInfoCard.propTypes = {
+  icon: PropTypes.string,
+  title: PropTypes.string.isRequired,
+  date: PropTypes.string.isRequired,
+  amount: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+  type: PropTypes.string.isRequired,
+  hideDeleteBtn: PropTypes.bool,
+  onDelete: PropTypes.func,
 };
 
 export default TransactionInfoCard;

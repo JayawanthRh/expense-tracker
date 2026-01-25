@@ -43,7 +43,7 @@ const SideMenu = ({ activeMenu }) => {
           />
         )}
 
-        <h5 className="text-white font-semibold leading-6 drop-shadow-lg">
+        <h5 className="text-white text-lg font-bold leading-6 drop-shadow-xl">
           {user.fullName || ""}
         </h5>
       </div>
@@ -51,10 +51,10 @@ const SideMenu = ({ activeMenu }) => {
       {SIDE_MENU_DATA.map((item, index) => (
         <button
           key={`menu_${index}`}
-          className={`w-full flex items-center gap-4 text-[15px] font-medium ${
+          className={`w-full flex items-center gap-4 text-[15px] font-bold ${
             activeMenu == item.label 
               ? "text-white bg-gradient-to-r from-purple-500 to-indigo-600 shadow-xl shadow-purple-500/40" 
-              : "text-white/90 hover:bg-white/20 hover:text-white"
+              : "text-white hover:bg-white/20"
           } py-3 px-6 rounded-xl mb-3 transition-all duration-200 hover:scale-105 backdrop-blur-sm`}
           onClick={() => handleClick(item.path)}
         >
