@@ -1,15 +1,15 @@
-import React from "react";
-import TransactionInfoCard from "../Cards/TransactionInfoCard";
 import { LuArrowRight } from "react-icons/lu";
 import moment from "moment";
+import PropTypes from "prop-types";
+import TransactionInfoCard from "../Cards/TransactionInfoCard";
 
 const RecentTransactions = ({transactions, onSeeMore}) => {
   return (
     <div className="card">
       <div className="flex items-center justify-between ">
-        <h5 className="text-lg">Recent Transactions</h5>
+        <h5 className="text-lg font-bold text-gray-900">Recent Transactions</h5>
 
-        <button className="card-btn" onClick={onSeeMore}>
+        <button className="card-btn font-bold text-indigo-700" onClick={onSeeMore}>
           See All <LuArrowRight className="text-base" />
         </button>
       </div>
@@ -29,6 +29,11 @@ const RecentTransactions = ({transactions, onSeeMore}) => {
       </div>
     </div>
   );
+};
+
+RecentTransactions.propTypes = {
+  transactions: PropTypes.array,
+  onSeeMore: PropTypes.func.isRequired,
 };
 
 export default RecentTransactions;

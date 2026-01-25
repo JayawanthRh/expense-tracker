@@ -21,7 +21,7 @@ const Navbar = ({ activeMenu }) => {
         )}
       </button>
 
-      <h2 className="text-lg font-semibold text-white drop-shadow-lg">💰 Expense Tracker</h2>
+      <h2 className="text-xl font-bold text-white drop-shadow-2xl">💰 Expense Tracker</h2>
 
       {openSideMenu && (
         <div className="fixed top-[73px] -ml-4 bg-white/95 backdrop-blur-xl shadow-2xl shadow-black/20 rounded-r-3xl">

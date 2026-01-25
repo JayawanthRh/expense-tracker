@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { LuPlus } from "react-icons/lu";
-import CustomLineChart from "../Charts/CustomLineChart";
 import CustomBarChart from "../Charts/CustomBarChart";
 import { prepareIncomeBarChartData } from "../../utils/helper";
+import PropTypes from "prop-types";
 
 const IncomeOverview = ({ transactions, onAddIncome }) => {
 
@@ -19,8 +19,8 @@ const IncomeOverview = ({ transactions, onAddIncome }) => {
     <div className="card">
       <div className="flex items-center justify-between">
         <div className="">
-          <h5 className="text-lg">Income Overview</h5>
-          <p className="text-xs text-gray-400 mt-0.5">
+          <h5 className="text-lg font-bold text-gray-900">Income Overview</h5>
+          <p className="text-xs text-gray-900 font-bold mt-0.5">
             Track your earnings over time and analyze your income trends.
           </p>
         </div>
@@ -36,6 +36,11 @@ const IncomeOverview = ({ transactions, onAddIncome }) => {
       </div>
     </div>
   );
+};
+
+IncomeOverview.propTypes = {
+  transactions: PropTypes.array,
+  onAddIncome: PropTypes.func.isRequired,
 };
 
 export default IncomeOverview;

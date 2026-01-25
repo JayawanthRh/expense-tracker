@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { FaRegEye, FaRegEyeSlash } from "react-icons/fa6";
+import PropTypes from "prop-types";
 
 const Input = ({ label, value, onChange, placeholder, type }) => {
   const [showPassword, setShowPassword] = useState(false);
@@ -10,7 +11,7 @@ const Input = ({ label, value, onChange, placeholder, type }) => {
 
   return (
     <div>
-      <label className="text-[13px] text-slate-800">{label}</label>
+      <label className="text-[13px] text-slate-900 font-semibold">{label}</label>
 
       <div className="input-box">
         <input
@@ -32,7 +33,7 @@ const Input = ({ label, value, onChange, placeholder, type }) => {
             ) : (
               <FaRegEyeSlash
                 size={22}
-                className="text-slate-400 cursor-pointer"
+                className="text-slate-900 cursor-pointer"
                 onClick={() => toggleShowPassword()}
               />
             )}
@@ -41,6 +42,14 @@ const Input = ({ label, value, onChange, placeholder, type }) => {
       </div>
     </div>
   );
+};
+
+Input.propTypes = {
+  label: PropTypes.string,
+  value: PropTypes.string,
+  onChange: PropTypes.func.isRequired,
+  placeholder: PropTypes.string,
+  type: PropTypes.string,
 };
 
 export default Input;
